@@ -4,6 +4,7 @@ name: Lint
 on:
   push:
     paths: "*.py"
+  workflow_dispatch:
 
 jobs:
   code:
@@ -13,7 +14,8 @@ jobs:
         uses: actions/checkout@v7
       - name: Install lint Ruff
         run: pip install ruff
-      - name: Check Ruff
-        run: ruff check .
       - name: Ruff Fix
         run: ruff check --fix
+      - name: Check Ruff
+        run: ruff check .
+      
