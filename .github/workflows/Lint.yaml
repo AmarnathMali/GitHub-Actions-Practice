@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: checkout/clone
         uses: actions/checkout@v7
+      - name: Setup Python
+        uses: actions/setup-python@v6.2.0
+        with:
+          python-version: '3.x' 
       - name: Install lint Ruff
         run: pip install ruff
-      - name: Ruff Fix
-        run: ruff check --fix
       - name: Check Ruff
         run: ruff check .
       
