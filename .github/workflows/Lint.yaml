@@ -1,0 +1,18 @@
+# goal is to check code synatx, indentaion whenever someone pushes the code
+name: Lint
+
+on:
+  push:
+    paths: "*.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout/clone
+        uses: actions/checkout@v7
+      - name: Install lint Ruff
+        run: pip install ruff
+      - name: Check Ruff
+        run: ruff check .
+        
