@@ -15,4 +15,5 @@ jobs:
         run: pip install ruff
       - name: Check Ruff
         run: ruff check .
-        
+      - name: Ruff Fix
+        run: ruff check --fix
